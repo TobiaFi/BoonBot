@@ -38,7 +38,7 @@ def end_poll():
 #   [Required] Execute Data / Process messages
 #---------------------------
 def Execute(data):
-    if data.IsChatMessage() and data.Message.lower() == '!boon' and not poll_is_active:
+    if data.IsChatMessage() and data.Message.lower() == '!boon' and data.UserName.lower() == 'tobiaf' and not poll_is_active:
         Parent.SendStreamMessage("Poll has started")
         global poll_is_active
         poll_is_active = True
