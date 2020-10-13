@@ -29,7 +29,7 @@ def end_poll():
     global votes
     global vote_count
     vote_count = Counter(votes.values())
-    Parent.SendStreamMessage("The people have spoken. Boon #" + str(vote_count.most_common()[0][0]) + ' was picked with ' + str(vote_count.most_common()[0][1]) + ' vote(s)')
+    Parent.SendStreamMessage('The people have spoken. Boon #' + str(vote_count.most_common()[0][0]) + ' was picked with ' + str(vote_count.most_common()[0][1]) + ' vote(s)')
     votes = dict()
     vote_count = dict()
     return
@@ -39,7 +39,7 @@ def end_poll():
 #---------------------------
 def Execute(data):
     if data.IsChatMessage() and data.Message.lower() == '!boon' and data.UserName.lower() == 'tobiaf' and not poll_is_active:
-        Parent.SendStreamMessage('Which boon do you want me to pick? Vote by typing 1/2/3 in the chat!'')
+        Parent.SendStreamMessage('Which boon do you want me to pick? Vote by typing 1/2/3 in the chat!')
         global poll_is_active
         poll_is_active = True
         t = threading.Timer(45.0, end_poll)
